@@ -1,0 +1,8 @@
+# Add FaMAF to dictionary
+a
+FaMAF
+Facultad de Matemática, Astronomía y Física
+# Clone dictionary
+c
+# Quit application
+q

@@ -1,0 +1,45 @@
+# Version 1.x
+    # Version 1.2.x
+
+        # Version 1.2.2
+            - Only check output and Valgrind log if there are no errors when running the program to check
+            - Fixed typos in manual.pdf
+            - Updated trusted applications (original_amd64 and original_i386)
+            - Added JAIME acceptance fixtures (test cases)
+
+        # Version 1.2.1
+            - Inproved memory error/leaks checker
+            - Added automatic CPU architecture detector
+            - Included Manual (manual.pdf)
+
+        # Version 1.2
+            - Fixed bug (Fixed typo "=!" in init.sh)
+            - Added command line arguments help/version/test/file
+            - Added Help file
+            - If test number is defined by user, ask if temporary files should be removed
+
+    # Version 1.1.x
+
+        # Version 1.1.2
+            - Added #!File Dependant (Test cases will only be checked for every dictionary in input folder if it's first line is equal to this hashtag)
+
+        # Version 1.1.1
+            - Fixed bug (Input file bad parsed when it contains spaces)
+            - Fixed bug (Replaced "memory leaks" with "memory errors")
+        
+        # Version 1.1
+            - Added multiple test cases support
+            - Improved word definition filter
+
+    # Version 1.0.x
+
+        # Version 1.0.2
+            - Replaced "actions file" with "input file" for better understanding
+            - Customizable variables are now uppercase for better understanding
+
+        # Version 1.0.1
+            - Fixed bug (Bad actions file led to an infinite loop, which could make output extremely large, filling the hard drive)
+              Customizable variable $maxoutputsize was added to control the output's maximum file size
+
+        # Version 1.0
+            - Judge released

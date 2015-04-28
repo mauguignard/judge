@@ -1,0 +1,37 @@
+# Add word to dictionary
+a
+word
+Definition
+# Add FaMAF to dictionary
+a
+FaMAF
+Facultad de Matemática, Astronomía y Física
+# Add UNC to dictionary
+a
+UNC
+Universidad Nacional de Córdoba
+# Dump dictionary
+u
+dump_dictionary
+# Show dictionary
+h
+# Add sun to dictionary
+a
+sun
+Star
+# Show size of dictionary
+z
+# Load previously dumped dictionary
+l
+dump_dictionary
+# Show size of dictionary
+z
+# Delete UNC from dictionary
+d
+UNC
+# Show size of dictionary
+z
+# Show dictionary
+h
+# Quit application
+q

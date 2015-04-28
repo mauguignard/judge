@@ -1,0 +1,74 @@
+# This test was made by teachers
+# JAIME dictionary.fx fixture
+#
+# Show size of dictionary
+z
+# Add "independiente" to dictionary
+a
+independiente
+el rojo
+# Add "boca" to dictionary
+a
+boca
+el xeneize
+# Add "san lorenzo" to dictionary
+a
+san lorenzo
+el ciclón
+# Add "velez" to dictionary
+a
+velez
+el fortín
+# Add "racing" to dictionary
+a
+racing
+la academia
+# Add "river" to dictionary
+a
+river
+el millonario
+# Add "lanus" to dictionary
+a
+lanus
+el granate
+# Show size of dictionary
+z
+# Search "milan" in dictionary
+s
+milan
+# Search "river" in dictionary
+s
+river
+# Delete "independiente" from dictionary
+d
+independiente
+# Show size of dictionary
+z
+# Search "independiente" in dictionary
+s
+independiente
+# Add "rafaela" to dictionary
+a
+rafaela
+la crema
+# Show size of dictionary
+z
+# Delete "racing"
+d
+racing
+# Show size of dictionary
+z
+# Clone dictionary
+c
+# Empty dictionary
+e
+# Add "rafaela" to dictionary
+a
+rafaela
+la crema
+# Show size of dictionary
+z
+# Show dictionary
+h
+# Quit application
+q

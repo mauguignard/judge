@@ -1,0 +1,18 @@
+USAGE: ./judge.sh [OPTION] [-t=TNUMBER | --test=TNUMBER]
+                  [-f=FILENAME | --file=FILENAME] TO_CHECK_APP
+
+Example: ./judge.sh --test=12 --file=small.dic dictionary
+
+OPTIONS:
+  -h, --help       Show this help file
+  -v, --version    Show the version of the Judge
+
+FILTERS:
+  -t, --test       If defined, the Judge will only run the test case N° TNUMBER
+  -f, --file       If defined, the Judge will only run the file input/FILENAME
+                   on file dependant test cases
+
+TO_CHECK_APP       The app compiled from the user code
+
+All bugs/errors should be reported to: mauguignard@gmail.com
+For more information check manual.pdf

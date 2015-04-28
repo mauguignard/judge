@@ -1,0 +1,20 @@
+# Show size of dictionary
+z
+# Add FaMAF to dictionary
+a
+FaMAF
+Facultad de Matemática, Astronomía y Física
+# Show size of dictionary
+z
+# Delete UNC from dictionary
+d
+UNC
+# Show size of dictionary
+z
+# Delete FaMAF from dictionary
+d
+FaMAF
+# Show size of dictionary
+z
+# Quit application
+q

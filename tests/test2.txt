@@ -1,0 +1,33 @@
+# Test menu commands
+# Show size of dictionary
+z
+# Search word in dictionary
+s
+word
+# Add FaMAF to dictionary
+a
+FaMAF
+Facultad de Matemática, Astronomía y Física
+# Show dictionary
+h
+# Duplicate dictionary
+c
+# Delete UNC from dictionary
+d
+UNC
+# Delete FaMAF from dictionary
+d
+FaMAF
+# Dump dictionary to file
+u
+dump_dictionary
+# Load dictionary from file
+l
+dump_dictionary
+# Load invalid dictionary from file
+l
+input/dictionary
+# Empty dictionary
+e
+# Quit application
+q

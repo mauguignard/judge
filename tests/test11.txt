@@ -1,0 +1,12 @@
+# Add FaMAF to dictionary
+a
+FaMAF
+Facultad de Matemática, Astronomía y Física
+# Empty dictionary
+e
+# Show size of dictionary
+z
+# Show dictionary
+h
+# Quit application
+q

@@ -1,0 +1,17 @@
+# This test was made by teachers
+# JAIME empty_dict.fx fixture
+#
+# Show dictionary
+h
+# Show size of dictionary
+z
+# Search "foo" in dictionary
+s
+foo
+# Delete "foo" in dictionary"
+d
+foo
+# Clone dictionary
+c
+# Quit application
+q

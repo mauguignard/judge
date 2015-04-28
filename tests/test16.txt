@@ -1,0 +1,48 @@
+# Show size of dictionary
+z
+# Add "word" to dictionary
+a
+word
+definition
+# Add "ACM-ICPC" to dictionary
+a
+ACM-ICPC
+International Collegiate Programming Contest
+# Add "C" to dictionary
+a
+C
+A powerful programming language
+# Add "c" to dictionary
+a
+c
+The third letter of the alphabet
+# Add "replace" to dictionary
+a
+replace
+To take the place of
+# Try to add "replace" again in the dictionary
+a
+replace
+# Show size of dictionary
+z
+# Search "42" in the dictionary
+s
+42
+# Delete "word" from dictionary
+d
+word
+# Show size of dictionary
+z
+# Add "42" to dictionary
+a
+42
+The Answer to the Ultimate Question of Life, The Universe, and Everything
+# Dump dictionary
+u
+dump_dictionary
+# Clone dictionary
+c
+# Show size of dictionary
+z
+# Quit application
+q

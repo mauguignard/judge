@@ -1,0 +1,9 @@
+# Add FaMAF to dictionary
+a
+FaMAF
+Facultad de Matemática, Astronomía y Física
+# Dump dictionary
+u
+dump_dictionary
+# Quit application
+q

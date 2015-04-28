@@ -1,0 +1,94 @@
+#!File Dependant
+# Get size of empty dictionary
+z
+# Search some word in empty dictionary
+s
+prueba
+# Show empty dictionary
+h
+# Empty dictionary
+e
+# Check again size of dictionary
+z
+# Send some invalid command
+k
+# Delete some entry from empty dictionary
+d
+delete
+# Check again size of dictionary
+z
+# Add some word to empty dictionary
+a
+word
+definition
+# Check again size
+z
+# Search word just added
+a
+word
+# Show dictionary
+h
+# Duplicate dictionary
+c
+# Show size
+z
+# Load dictionary
+l
+load_dictionary
+# Show size
+z
+# Search first word
+s
+first_word
+# Search last word
+s
+last_word
+# Search random word
+s
+random_word
+# Try to add word that already exists
+a
+random_word
+# Show size
+z
+# Delete some random word
+d
+random_word
+# Show size
+z
+# Add some word
+a
+judge
+this thing
+# Check again size
+z
+# Delete first word
+d
+first_word
+# Try to delete again the (already removed) first word
+d
+first_word
+# Show size
+z
+# Delete last word
+d
+last_word
+# Check size
+z
+# Send empty command
+
+# Show dictionary
+h
+# Dump dictionary
+u
+dump_dictionary
+# Duplicate dictionary
+c
+# Show size
+z
+# Empty the dictionary
+e
+# Show size
+z
+# Exit application
+q

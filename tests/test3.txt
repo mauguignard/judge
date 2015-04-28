@@ -1,0 +1,18 @@
+# Send invalid command
+k
+# Test uppercase
+Z
+# Test command + space
+z
+# Test space + command
+ z
+# Send empty command
+
+# Show size of dictionary
+za
+# Add FaMAF to dictionary
+az
+FaMAF
+Facultad de Matemática, Astronomía y Física
+# Quit application
+q

@@ -1,0 +1,19 @@
+# This test was made by teachers
+# JAIME invalid_file.fx fixture
+#
+# Add "boca" to dictionary
+a
+boca
+el xeneize
+# Load invalid dictionary file
+l
+invalid-file
+# Show size of dictionary
+z
+# Search "boca" in dictionary
+s
+boca
+# Show dictionary
+h
+# Quit application
+q

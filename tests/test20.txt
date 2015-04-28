@@ -1,0 +1,52 @@
+# This test was made by teachers
+# JAIME from_to_file.fx fixture
+#
+# This test was modified to be compatible with Judge
+# ++ = Command added
+# ** = Command modified
+#
+# ++Show dictionary
+h
+# **Dump dictionary
+u
+temp_dump
+# ++Load dictionary
+l
+temp_dump
+# Add "rojo" to dictionary
+a
+rojo
+De color parecido al del oro
+# Add "azul" to dictionary
+a
+azul
+Del color del cielo sin nubes
+# Add "amarillo" to dictionary
+a
+amarillo
+De color semejante al del oro, la flor de la retama
+# Show dictionary
+h
+# **Dump dictionary
+u
+temp_dump
+# Add "verde" to dictionary
+a
+verde
+De color semejante al de la hierba fresca, la esmeralda
+# Show size of dictionary
+z
+# **Load dictionary
+l
+temp_dump
+# Show size of dictionary
+z
+# Delete "azul" from dictionary
+d
+azul
+# Show size of dictionary
+z
+# Show dictionary
+h
+# Quit application
+q

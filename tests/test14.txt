@@ -1,0 +1,16 @@
+# Add FaMAF to dictionary
+a
+FaMAF
+Facultad de Matemática, Astronomía y Física
+# Dump dictionary
+u
+dump_dictionary
+# Add UNC to dictionary
+a
+UNC
+Universidad Nacional de Córdoba
+# Load dictionary
+l
+dump_dictionary
+# Quit application
+q

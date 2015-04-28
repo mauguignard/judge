@@ -1,0 +1,37 @@
+# Show size of dictionary
+z
+# Show dictionary
+h
+# Search FaMAF in dictionary
+s
+FaMAF
+# Add FaMAF to dictionary
+a
+FaMAF
+Facultad de Matemática, Astronomía y Física
+# Show size of dictionary
+z
+# Show dictionary
+h
+# Search FaMAF in dictionary
+s
+FaMAF
+# Delete UNC from dictionary
+d
+UNC
+# Show size of dictionary
+z
+# Show dictionary
+h
+# Delete FaMAF from dictionary
+d
+FaMAF
+# Show size of dictionary
+z
+# Show dictionary
+h
+# Search FaMAF in dictionary
+s
+FaMAF
+# Quit application
+q
