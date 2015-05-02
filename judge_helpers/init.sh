@@ -1,6 +1,6 @@
 #!/bin/bash
 # ///////////////////////////////////////////////////////////////////////////////////////////////////////
-# // Auto-Judge v1.2.2
+# // Auto-Judge v1.3
 # //    Feel free to read this code and modify it as you please
 # //    Please report any mistakes/bugs/errors found in this code
 # //
@@ -28,16 +28,17 @@
 # $1 Trusted Application
 # $2 Application to check
 
-USAGE="USAGE: ./judge.sh [-t=TESTNUMBER | --test=TESTNUMBER] [-f=FILE | --file=FILE] TO_CHECK_APP"
+USAGE="USAGE: ./judge.sh [-ord | --ordered] [-T=TRUSTED_APP | --trusted=TRUSTED_APP]\n
+       \t[-t=TESTNUM | --test=TESTNUM] [-f=FILE | --file=FILE] TO_CHECK_APP"
 # Check if there are no parameters
 if [ "$1" == "" -a "$2" == "" ]; then
-    echo $USAGE
+    echo -e $USAGE
     exit 1
 fi
 
 # Check if parameters are correct
 if [ "$1" == "" -o "$2" == "" ]; then
-    echo $USAGE
+    echo -e $USAGE
     echo "This judge needs 1 parameters to work"
     exit 1
 fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 # ///////////////////////////////////////////////////////////////////////////////////////////////////////
-# // Auto-Judge v1.2.2
+# // Auto-Judge v1.3
 # //    Feel free to read this code and modify it as you please
 # //    Please report any mistakes/bugs/errors found in this code
 # //
@@ -30,7 +30,7 @@
 # Customizable variables
 
     # Time Limit
-    MAX_TIME="45s"
+    MAX_TIME="60s"
 
     # Maximum Output Size in bytes (Default 10MB)
     MAX_OUTPUT_SIZE=10000000
@@ -60,13 +60,18 @@ case $1 in
     ;;
 
     -v | --version)
-        echo "Auto-Judge Version 1.2.2"
+        echo "Auto-Judge Version 1.3"
         exit 0
     ;;
 esac
 
 while test $# -gt 0; do
     case $1 in
+        -T=* | --trusted=*)
+            trustedapp=$(echo $1 | cut -f2 -d=)
+            trusted_defined="TRUE"
+        ;;
+
         -t=* | --test=*)
             test_counter=$(echo $1 | cut -f2 -d=)
             test_case="tests/test${test_counter}.txt"
@@ -84,6 +89,10 @@ while test $# -gt 0; do
             file=$(echo $1 | cut -f2 -d=)
             file=$(echo "input/$file")
             file_defined="TRUE"
+        ;;
+
+        -ord | --ordered)
+            ordered_defined="TRUE"
         ;;
 
         -*)
@@ -115,10 +124,20 @@ elif [ ! -x "$inithelper" ]; then
 fi
 
 # Check the CPU architecture and select proper TRUSTED_APP
-if [ `getconf LONG_BIT` = "64" ]; then
-    trustedapp="original_amd64"
-else
-    trustedapp="original_i386"
+if [ ! -n "$trusted_defined" ]; then
+    if [ ! -n "$ordered_defined" ]; then
+        if [ `getconf LONG_BIT` = "64" ]; then
+            trustedapp="original_amd64"
+        else
+            trustedapp="original_i386"
+        fi
+    else
+        if [ `getconf LONG_BIT` = "64" ]; then
+            trustedapp="ordered_amd64"
+        else
+            trustedapp="ordered_i386"
+        fi
+    fi
 fi
 
 # Load init.sh helper. On error, exit
@@ -152,6 +171,15 @@ function run_to_check() {
     exitcode=${PIPESTATUS[1]}
 }
 
+# RemoveTempFiles function
+function removeTempFiles() {
+    if [ -f $TRUSTED_OUTPUT ]; then rm $TRUSTED_OUTPUT; fi
+    if [ -f $TO_CHECK_OUTPUT ]; then rm $TO_CHECK_OUTPUT; fi
+    if [ -f $TRUSTED_DUMP ]; then rm $TRUSTED_DUMP; fi
+    if [ -f $TO_CHECK_DUMP ]; then rm $TO_CHECK_DUMP; fi
+    if [ -f $VALGRIND_LOG ]; then rm $VALGRIND_LOG; fi
+}
+
 # ERROR checker
 function checkError() {
     if [ $1 == 0 ]; then
@@ -165,6 +193,9 @@ function checkError() {
 
 # JUDGE function
 function judge() {
+    # Make sure there are no temporary files created before running the Judge
+    removeTempFiles
+
     # Parse input file
     echo -ne "${3}Parsing input file... "
     input=$(parseInput "$test_case" "${file}" "temp_dump" 2> /dev/null)
@@ -210,13 +241,6 @@ if [[ $test_defined != "TRUE" ]]; then
     test_case="tests/test1.txt"
 fi
 
-# Make sure there are no temporary files created before running the Judge
-if [ -f $TRUSTED_OUTPUT ]; then rm $TRUSTED_OUTPUT; fi
-if [ -f $TO_CHECK_OUTPUT ]; then rm $TO_CHECK_OUTPUT; fi
-if [ -f $TRUSTED_DUMP ]; then rm $TRUSTED_DUMP; fi
-if [ -f $TO_CHECK_DUMP ]; then rm $TO_CHECK_DUMP; fi
-if [ -f $VALGRIND_LOG ]; then rm $VALGRIND_LOG; fi
-
 # JUDGE
 while [ -f "$test_case" -a -r "$test_case" ]; do
     echo "Test $test_counter"
@@ -228,12 +252,12 @@ while [ -f "$test_case" -a -r "$test_case" ]; do
         else
             if [[ $file_defined == "TRUE" ]]; then
                 echo -e "\tFile: ${file}"
-                judge $trustedapp $1 "\t\t" 
+                judge $trustedapp $1 "\t\t"
             else
                 # Run test case for every dictionary
                 for file in input/*.dic; do
                     echo -e "\tFile: ${file}"
-                    judge $trustedapp $1 "\t\t" 
+                    judge $trustedapp $1 "\t\t"
                 done
             fi
         fi
@@ -273,8 +297,4 @@ if [[ $test_defined == "TRUE" ]]; then
     fi
 fi
 # Remove temporary files
-rm $TRUSTED_OUTPUT
-rm $TO_CHECK_OUTPUT
-if [ -f $TRUSTED_DUMP ]; then rm $TRUSTED_DUMP; fi
-if [ -f $TO_CHECK_DUMP ]; then rm $TO_CHECK_DUMP; fi
-rm $VALGRIND_LOG
+removeTempFiles

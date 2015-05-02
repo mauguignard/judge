@@ -1,6 +1,6 @@
 #!/bin/bash
 # ///////////////////////////////////////////////////////////////////////////////////////////////////////
-# // Auto-Judge v1.2.2
+# // Auto-Judge v1.3
 # //    Feel free to read this code and modify it as you please
 # //    Please report any mistakes/bugs/errors found in this code
 # //

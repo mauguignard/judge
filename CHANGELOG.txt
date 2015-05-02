@@ -1,4 +1,16 @@
 # Version 1.x
+    # Version 1.3.x
+
+        # Version 1.3
+            - Fixed bug (No memory leaks were shown in report if Valgrind Log contained ",". Example: 550,505)
+            - Fixed bug (If more than 1 memory leaks existed, the judge didn't show the number)
+            - Fixed bug (If Valgrind Log was invalid, the Judge showed OK)
+            - Added command line arguments ordered/trusted
+                - ordered: Use it if the app to check uses ordered lists
+                - trusted: Use a custom trusted app
+            - Added trusted ordered applications (ordered_amd64 and ordered_i386)
+            - Remove temporary files everytime the Judge runs to ensure correct report
+
     # Version 1.2.x
 
         # Version 1.2.2

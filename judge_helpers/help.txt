@@ -1,4 +1,4 @@
-USAGE: ./judge.sh [OPTION] [-t=TNUMBER | --test=TNUMBER]
+USAGE: ./judge.sh [OPTION] [MODE] [-t=TNUMBER | --test=TNUMBER]
                   [-f=FILENAME | --file=FILENAME] TO_CHECK_APP
 
 Example: ./judge.sh --test=12 --file=small.dic dictionary
@@ -6,6 +6,10 @@ Example: ./judge.sh --test=12 --file=small.dic dictionary
 OPTIONS:
   -h, --help       Show this help file
   -v, --version    Show the version of the Judge
+
+MODES:
+  -ord, --ordered  Execute Judge in ordered mode
+  -T, --trusted    The Judge will use the custom defined TRUSTED_APP
 
 FILTERS:
   -t, --test       If defined, the Judge will only run the test case N° TNUMBER

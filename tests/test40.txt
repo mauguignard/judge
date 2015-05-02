@@ -1,0 +1,3 @@
+l
+input/large.dic
+q

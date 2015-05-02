@@ -1,6 +1,6 @@
 #!/bin/bash
 # ///////////////////////////////////////////////////////////////////////////////////////////////////////
-# // Auto-Judge v1.2.2
+# // Auto-Judge v1.3
 # //    Feel free to read this code and modify it as you please
 # //    Please report any mistakes/bugs/errors found in this code
 # //
@@ -43,9 +43,15 @@ if [ ! -r "$2" ]; then
 fi
 
 function checkMemLeaks() {
-    totalheapusage=$(cat $1 | grep -oe "total heap usage: [0-9]\+ allocs, [0-9]\+ frees")
-    allocs=$(echo $totalheapusage | grep -oe "[0-9]\+ allocs" | grep -oe "[0-9]\+")
-    frees=$(echo $totalheapusage | grep -oe "[0-9]\+ frees" | grep -oe "[0-9]\+")
+    totalheapusage=$(cat $1 | grep -oe "total heap usage: [0-9,]\+ allocs, [0-9,]\+ frees")
+    if [[ $totalheapusage == "" ]]; then
+        echo -e "\e[1;34mINVALID LOG FILE\e[0m"
+        exit 1
+    fi
+    allocs=$(echo $totalheapusage | grep -oe "[0-9,]\+ allocs" | grep -oe "[0-9,]\+")
+    frees=$(echo $totalheapusage | grep -oe "[0-9,]\+ frees" | grep -oe "[0-9,]\+")
+    allocs=$(echo "${allocs//,}")
+    frees=$(echo "${frees//,}")
     let "memleaks = allocs - frees"
     if [ $memleaks == 0 ]; then
         echo -e "\e[1;32mOK. No memory leaks were found\e[0m"
@@ -54,13 +60,18 @@ function checkMemLeaks() {
         echo -e "\e[1;31mWRONG ANSWER. 1 memory leaks was found\e[0m"
         exit 1
     else
-        echo -e "\e[1;31mWRONG ANSWER. $errors memory leaks were found\e[0m"
+        echo -e "\e[1;31mWRONG ANSWER. $memleaks memory leaks were found\e[0m"
         exit 1
     fi
 }
 
 function checkMemErrors() {
-    errors=$(tail -n 1 $1 | grep -oe "[0-9]\+ errors" | grep -oe "[0-9]\+")
+    errors=$(tail -n 1 $1 | grep -oe "[0-9,]\+ errors" | grep -oe "[0-9,]\+")
+    if [[ $errors == "" ]]; then
+        echo -e "\e[1;34mINVALID LOG FILE\e[0m"
+        exit 1
+    fi
+    errors=$(echo "${errors//,}")
     if [ $errors == 0 ]; then
         echo -e "\e[1;32mOK. No memory errors were found\e[0m"
         exit 0
